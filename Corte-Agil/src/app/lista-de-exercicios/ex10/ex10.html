@@ -1,0 +1,9 @@
+<form #formLogin="ngForm">
+  <label for="nome">Nome:</label>
+  <input type="text" [(ngModel)]="nome" name="nome" required><br><br>
+
+  <label for="senha">Senha:</label>
+  <input type="password" [(ngModel)]="senha" name="senha" required><br><br>
+
+  <button type="submit" (click)="bemVindoMSG()" [disabled]="!formLogin.valid">Submit</button>
+</form>

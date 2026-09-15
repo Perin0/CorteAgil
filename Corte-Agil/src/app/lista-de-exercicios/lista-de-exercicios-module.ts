@@ -12,9 +12,10 @@ import { Ex7 } from './ex7/ex7';
 import { FormsModule } from '@angular/forms';
 import { Ex8 } from './ex8/ex8';
 import { Ex9 } from './ex9/ex9';
+import { Ex10 } from './ex10/ex10';
 
 @NgModule({
-  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex4Verdadeiro, Ex7, Ex8, Ex9],
+  declarations: [Ex1, Ex2, Ex3, Ex4, Ex5, Ex4Verdadeiro, Ex7, Ex8, Ex9, Ex10],
   imports: [CommonModule, ListaDeExerciciosRoutingModule, FormsModule],
 })
 export class ListaDeExerciciosModule {}
