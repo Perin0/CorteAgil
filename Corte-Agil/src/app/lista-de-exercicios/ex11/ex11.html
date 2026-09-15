@@ -1,0 +1,15 @@
+<form #formLogin="ngForm">
+    <label for="produto">produto do produto:</label>
+    <input type="text" [(ngModel)]="produto" name="produto" required><br><br>
+
+    <label for="preco">preco:</label>
+    <input type="number" [(ngModel)]="preco" name="preco" required><br><br>
+
+    <button (click)="subCountQtd()" [disabled]="isButtonDisabled">-</button>
+    <button (click)="addCountQtd()">+</button>
+    <p>Quantidade: {{ quantidade }}</p>
+
+    <p>Total: R$ {{ (preco*quantidade).toFixed(2) }}</p>
+
+    <button type="submit" (click)="addCarrinho()" [disabled]="!formLogin.valid">Adicionar ao Carrinho</button>
+</form>
