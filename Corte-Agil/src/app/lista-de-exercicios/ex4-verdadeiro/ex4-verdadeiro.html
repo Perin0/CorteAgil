@@ -1,0 +1,10 @@
+<form>
+  <label for="input1">Input 1:</label>
+  <input type="text" id="input1" name="input1" required><br><br>
+
+  <label for="input2">Input 2:</label>
+  <input type="text" id="input2" name="input2" required><br><br>
+
+  <button type="submit" [disabled]="isButtonDisabled">Submit</button>
+  <button (click)="verificarViabilidade()">Mudar Viabilidade do Form</button>
+</form>
