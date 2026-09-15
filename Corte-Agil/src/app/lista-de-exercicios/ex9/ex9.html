@@ -1,0 +1,14 @@
+<label for="produto">Produto</label>
+<input id="produto" type="text" [(ngModel)]="produto">
+<br>
+<label for="preco">Preco</label>
+<input id="preco" type="text" [(ngModel)]="preco">
+<br>
+<br>
+<button (click)="subCountQtd()" [disabled]="isButtonDisabled">-</button>
+<button (click)="addCountQtd()">+</button>
+<p>Quantidade: {{ quantidade }}</p>
+
+<p>Total: R$ {{ (quantidade*preco).toFixed(2) }}</p>
+
+

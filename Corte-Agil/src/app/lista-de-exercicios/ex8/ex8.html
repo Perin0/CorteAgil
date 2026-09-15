@@ -1,0 +1,9 @@
+<label for="produto">Produto</label>
+<input id="produto" type="text" [(ngModel)]="produto">
+<br>
+<label for="preco">Preco</label>
+<input id="preco" type="text" [(ngModel)]="preco">
+<br>
+<label for="quantidade">Quantidade</label>
+<input id="quantidade" type="text" [(ngModel)]="quantidade">
+<p>Total: {{ (quantidade*preco).toFixed(2) }}</p>
