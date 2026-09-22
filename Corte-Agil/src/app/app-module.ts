@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 
 import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     App
@@ -13,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+  
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

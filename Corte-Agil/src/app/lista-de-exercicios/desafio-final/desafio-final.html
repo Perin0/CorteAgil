@@ -1,0 +1,12 @@
+<form #formMatricula="ngForm">
+    <label for="nomeAluno">Nome do Aluno:</label>
+    <input type="text" [(ngModel)]="nomeAluno" name="nomeAluno" required><br><br>
+
+    <button (click)="subCountQtd()" [disabled]="isButtonDisabled">-</button>
+    <button (click)="addCountQtd()">+</button>
+    <p>Quantidade: {{ quantidadeMaterias }}</p>
+
+    <p>Nome do aluno (confirmação Two Way DataBinding): {{ nomeAluno }}</p>
+
+    <button type="submit" (click)="submitSuccessMSG()" [disabled]="!formMatricula.valid">Matricular</button>
+</form>
