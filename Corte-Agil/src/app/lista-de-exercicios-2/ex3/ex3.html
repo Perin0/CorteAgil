@@ -1,0 +1,16 @@
+<input type="number" [(ngModel)]="idade">  
+@if (idade < 0){
+    <p>Idade inválida.</p>
+}
+@else if(idade < 12){
+    <p>Você é CRIANÇA.</p>
+}
+@else if (idade >= 12 && idade < 18){
+    <p>Você é ADOLESCENTE.</p>
+}
+@else if (idade >= 18 && idade < 60){
+    <p>Você é ADULTO.</p>
+}
+@else{
+    <p>Você é IDOSO.</p>
+}

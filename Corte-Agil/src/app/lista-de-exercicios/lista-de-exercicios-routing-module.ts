@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'ex10', component: Ex10},
   {path: 'ex11', component: Ex11},
   {path: 'desafio-final', component: DesafioFinal},
-
+  
 ];
 
 @NgModule({

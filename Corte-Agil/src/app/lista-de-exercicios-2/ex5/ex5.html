@@ -1,0 +1,5 @@
+@for (nome of nomes; track nome; let i = $index; let f = $first; let l = $last){
+    <p>{{ i + 1 }} - {{ nome }}
+        {{ f ? ' - Primeiro item!' : (l ? ' - Último item!' : '') }}
+    </p>
+}
