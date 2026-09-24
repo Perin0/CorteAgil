@@ -1,1 +1,10 @@
-<p>ex7 works!</p>
+@for (d of disciplinas; track d; let i = $index; let even = $even; let f = $first; let l = $last){
+    <span [ngStyle]="{
+        'background-color': even ? 'red' : 'blue',
+        'font-weight': f ? '900' : '300',
+        'border': l ? '2px solid black' : 'none'
+    }">
+        {{ i + 1 }} - {{ d }}
+</span>
+<br>
+}

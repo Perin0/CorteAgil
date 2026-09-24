@@ -1,0 +1,22 @@
+@for (p of produtos; track p.id; let i = $index){
+    <h3>{{ i+1 }}</h3>
+    <ul>
+        <li>Nome: {{ p.nome }}</li>
+        <li>Preço: {{ p.preco | currency:'BRL'}}</li>
+        <li>Quantidade disponível: {{ p.quantidade }}</li>
+        <li [ngClass]="{
+            'texto-vermelho': p.quantidade === 0,
+            'texto-amarelo': p.quantidade >= 1 && p.quantidade <= 5,
+            'texto-verde': p.quantidade > 5
+        }">
+            @if (p.quantidade === 0) {
+                Sem estoque
+            } @else if (p.quantidade >= 1 && p.quantidade <= 5) {
+                Estoque baixo
+            } @else {
+                Estoque disponível
+            }
+        </li>
+        <li>Valor em estoque: {{ p.preco * p.quantidade | currency:'BRL'}}</li>
+    </ul>
+}

@@ -1,0 +1,9 @@
+@for (p of produtos; track p.id; let i = $index){
+    <h3>{{ i+1 }}</h3>
+    <ul>
+        <li>Nome: {{ p.nome }}</li>
+        <li>Preço: {{ p.preco | currency:'BRL'}}</li>
+        <li>Quantidade disponível: {{ p.quantidade }}</li>
+        <li>Valor em estoque: {{ p.preco * p.quantidade | currency:'BRL'}}</li>
+    </ul>
+}
