@@ -1,0 +1,25 @@
+<h3>Tarefas</h3>
+<p><strong>Total de tarefas:</strong> {{ totalTarefas }}</p>
+<p><strong>Concluídas:</strong> {{ totalConcluidas }}</p>
+<p><strong>Pendentes:</strong> {{ totalPendentes }}</p>
+@for (t of tarefas; track t.id; let i = $index) {
+<ul [ngClass]="{'prioridadeAlta': t.prioridade == 'alta',
+                    'prioridadeMedia': t.prioridade == 'média',
+                    'prioridadeBaixa': t.prioridade == 'baixa',
+                    'tarefaConcluida': t.concluida}">
+    <li>
+        {{ i + 1 }} - {{ t.titulo }}
+    </li>
+    <li>Responsável: {{ t.responsavel }}</li>
+    <li> {{ t.concluida ? 'Concluída' : 'Pendente' }}</li>
+    <li>Prioridade: {{ t.prioridade }}</li>
+    <li>
+        <button type="button" (click)="alternarSituacao(t)">
+            Marcar como {{ t.concluida ? 'Pendente' : 'Concluída' }}
+        </button>
+    </li>
+</ul>
+}
+@empty{
+<p>Nenhuma tarefa</p>
+}
