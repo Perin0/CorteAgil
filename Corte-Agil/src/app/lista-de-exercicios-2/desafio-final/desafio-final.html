@@ -1,0 +1,58 @@
+<!-- Requisitos 11 e 12: Métricas -->
+<p>Total de projetos: {{ totalProjetos }}</p>
+<p>Projetos concluídos: {{ totalConcluidos }}</p>
+
+<!-- Requisito 9: Mostrar/ocultar projetos concluídos -->
+<button type="button" (click)="alternarFiltroConcluidos()">
+  {{ ocultarConcluidos ? 'Mostrar Concluídos' : 'Ocultar Concluídos' }}
+</button>
+
+<!-- Requisitos 1, 2, 14 e 15: Repetição com @for, track projeto.id e $index -->
+@for (projeto of projetosFiltrados; track projeto.id; let i = $index) {
+  <div
+    [class.nota-alta]="projeto.nota !== null && projeto.nota >= 7"
+    [class.nota-baixa]="projeto.nota !== null && projeto.nota < 6"
+  >
+    <!-- Requisito 2: Posição -->
+    <p>Posição: {{ i + 1 }}</p>
+
+    <!-- Requisito 3: Título e Equipe -->
+    <p>Título: {{ projeto.titulo }}</p>
+    <p>Equipe: {{ projeto.equipe }}</p>
+
+    <!-- Requisitos 3 e 6: Exibição da nota -->
+    <p>
+      Nota:
+      @if (projeto.nota === null) {
+        Nota ainda não definida
+      } @else {
+        {{ projeto.nota }}
+      }
+    </p>
+
+    <!-- Requisitos 3 e 4: Status com classe dinâmica -->
+    <p [class]="'status-' + projeto.status">
+      Status: {{ projeto.status }}
+    </p>
+
+    <!-- Requisito 5: Projeto entregue -->
+    @if (projeto.entregue) {
+      <p>Projeto entregue</p>
+    }
+
+    <!-- Requisito 10: Alterar status -->
+    <div>
+      <label>Alterar status:</label>
+      <select [value]="projeto.status" (change)="atualizarStatus(projeto, $event)">
+        @for (opcao of opcoesStatus; track opcao) {
+          <option [value]="opcao">{{ opcao }}</option>
+        }
+      </select>
+    </div>
+
+    <hr>
+  </div>
+} @empty {
+  <!-- Requisito 13: Mensagem para lista vazia -->
+  <p>Nenhum projeto encontrado.</p>
+}
